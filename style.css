@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.header {  /* header flex container has the header logo and links */
+    display: flex;
+    justify-content: space-between;
+    font-family: Roboto, sans-serif;
+}
+
+ul {  /*unordered list becomes its own container so the links will be shown as a row */
+    display: flex;  
+    list-style-type: none;
+    gap: 18px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {  /* this contains all the sections below the header */
+    display: flex;
+    flex-direction: column; /* each section will be on top of each other. each section will then be styled as a row 
+    or as a column as needed */
+    flex: 1 1 auto; /* this will make each section grow/shrink equally to fill up the 
+    available space */
+    font-family: Roboto, sans-serif;
+}
+
+.website-awesome { /* this flex container has left and right sides to show in a row */
+    display: flex;
+    justify-content: space-between;
+}
+
+.random-info { /* this flex container will have a title part and some images with text */
+    display: flex;
+    flex-direction: column;
+}
+
+.random-info-interior { /* the images with text will need to show in a row */
+    display: flex;
+    gap: 35px;
+}
+
+.card {  /* each image with text is in a card format where the img can grow and push the text to the bottom */
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    flex: 1 1 auto;
+}
