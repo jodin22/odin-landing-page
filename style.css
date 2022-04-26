@@ -2,8 +2,12 @@
 
 .header {  /* header flex container has the header logo and links */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     font-family: Roboto, sans-serif;
+    background-color: #1F2937;
+    font-size: 24px;
+    color: #F9FAF8;    
 }
 
 ul {  /*unordered list becomes its own container so the links will be shown as a row */
@@ -12,8 +16,13 @@ ul {  /*unordered list becomes its own container so the links will be shown as a
     gap: 18px;
 }
 
+li {
+    font-size: 18px;
+}
+
 a {
     text-decoration: none;
+    color: #E5E7EB;
 }
 
 .container {  /* this contains all the sections below the header */
@@ -25,19 +34,67 @@ a {
     font-family: Roboto, sans-serif;
 }
 
-.website-awesome { /* this flex container has left and right sides to show in a row */
+.website-awesome { /* this flex container has left and right sides that will show in a row */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: flex-end;
+    background-color: #1F2937;
+    column-gap: 30px;
+    padding: 70px;
 }
 
-.random-info { /* this flex container will have a title part and some images with text */
+.left-side {   /* instead of having the items as a column as i initially tried, i limited the width and used flex wrap
+    so each item will wrap to the next row when there isn't enough space */
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    width: 350px;
+}
+
+.left-side .main {
+    font-size: 48px;
+    color: #F9FAF8;
+    font-weight: 800;
+}
+
+.left-side .secondary {
+    font-size: 18px;
+    color: #E5E7EB; 
+}
+
+button {
+    background-color: #3882F6;
+    color: #F9FAF8;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+}
+
+.random-info {  /* this flex container will have a title part and some images with text */
+    display: flex;
+    flex-direction: column; /* the title and the row of images/text will be the column parts */
+    /* then the row of images/text will be a row */ 
+}
+
+.random-info .title {
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    font-size: 36px;
+    font-weight: 800;
+    color: #1F2937;
+}
+
+.random-info p { 
+    text-align: center;
 }
 
 .random-info-interior { /* the images with text will need to show in a row */
     display: flex;
     gap: 35px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 160px 100px 160px;
 }
 
 .card {  /* each image with text is in a card format where the img can grow and push the text to the bottom */
@@ -47,4 +104,10 @@ a {
 
 .card img {
     flex: 1 1 auto;
+    border-radius: 14px;
+    border: 4px solid #3882F6;
+}
+
+.footer {
+    background-color: #1F2937;
 }
