@@ -10,10 +10,16 @@
     color: #F9FAF8;    
 }
 
+.header p {
+    margin-left: -45px;
+    padding: 0px;
+}
+
 ul {  /*unordered list becomes its own container so the links will be shown as a row */
     display: flex;  
     list-style-type: none;
     gap: 18px;
+    margin-right: -45px;
 }
 
 li {
@@ -27,10 +33,10 @@ a {
 
 .container {  /* this contains all the sections below the header */
     display: flex;
-    flex-direction: column; /* each section will be on top of each other. each section will then be styled as a row 
+    flex-direction: column; /* each section will be stacked on top of each. each section will then be styled as a row 
     or as a column as needed */
     flex: 1 1 auto; /* this will make each section grow/shrink equally to fill up the 
-    available space */
+    available space downward since the direction is column */
     font-family: Roboto, sans-serif;
 }
 
@@ -50,15 +56,27 @@ a {
     width: 350px;
 }
 
+/* .left-side {  this shows the same result as above. i thought maybe doing it this way, the bolded p and subtext p 
+    would be closer together. 
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px; this doesn't reduce the space between the bolded p and the smaller p
+    width: 350px;
+    flex: none;  this doesn't do anything about the space between bolded p and smaller p
+} */
+
+
 .left-side .main {
     font-size: 48px;
     color: #F9FAF8;
     font-weight: 800;
+    margin-bottom: -10px; /*this makes the bold p and subtext p closer together */
 }
 
 .left-side .secondary {
     font-size: 18px;
     color: #E5E7EB; 
+    justify-content: flex-start;
 }
 
 button {
@@ -103,9 +121,53 @@ button {
 }
 
 .card img {
-    flex: 1 1 auto;
+    flex: 1 1 auto;  /* this will make each section grow/shrink equally to fill up the 
+    available space downward since the above .card is using direction column. by using flex: 1 1 auto, it will 
+    make the cards/text uniform where if the image grows, the text is always at the bottom of the card. this was a tip
+    from the typical use cases from mdn flexbox */
     border-radius: 14px;
     border: 4px solid #3882F6;
+}
+
+.quote {
+    display: flex; /* this makes it flex in a row across the page. then i added a width to constrain the block of text,
+    but it stopped going across the page and only went up to the width. justify-content: center doesn't center it across the 
+    page; only inside the width. */
+    flex-wrap: wrap;
+    /*width: 600px; don't use this b/c it creates a box around the quote and the color only is inside the box. need the 
+    color to go across the whole div */
+    padding: 80px 350px 100px 350px; /* use this instead to shrink the content b/c the padding will push the text into 
+    the center more */
+    justify-content: flex-end;
+    margin: auto; /* this centers the text*/
+    background-color: #E5E7EB;
+    font-size: 36px; 
+    font-style: italic;
+    color: #1F2937;
+
+}
+
+.quote-second {
+    margin-top: -10px;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.call-action {  /* the container has each section stacked as a column. then inside each section, it is using either row 
+    or continuing as a column. here it is row. */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 900px; /* to constrain the width so it isn't across the whole screen */
+    background-color: #3882F6;
+    margin: 80px auto; /* centers the box */
+    color: #F9FAF8;
+    border-radius: 10px;
+}
+
+.call-action button {
+    border-radius: 10px;
+    border: 2px solid;
 }
 
 .footer {
