@@ -36,7 +36,7 @@ a {
     flex-direction: column; /* each section will be stacked on top of each. each section will then be styled as a row 
     or as a column as needed */
     flex: 1 1 auto; /* this will make each section grow/shrink equally to fill up the 
-    available space downward since the direction is column */
+    available space downward since the direction is column. and this will make the footer get pushed to the bottom */
     font-family: Roboto, sans-serif;
 }
 
@@ -153,8 +153,8 @@ button {
     font-style: normal;
 }
 
-.call-action {  /* the container has each section stacked as a column. then inside each section, it is using either row 
-    or continuing as a column. here it is row. */
+.call-action {  /* the container section below the header has each section stacked as a column. then inside each 
+    section, it is using either row or continuing as a column. here it is row. */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -163,6 +163,13 @@ button {
     margin: 80px auto; /* centers the box */
     color: #F9FAF8;
     border-radius: 10px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.call-action-second {
+    font-weight: normal;
+    font-size: 18px;
 }
 
 .call-action button {
@@ -170,6 +177,12 @@ button {
     border: 2px solid;
 }
 
-.footer {
+.footer { /* the class container below the header section stacked each section on top of each other using column. 
+    but this section is using neither row or column since it is a single p and only needs to be centered. other classes
+    needed a row or column flex b/c there was more than one flex item. also with the container using column, it pushes 
+    the footer all the way down to the bottom of the page b/c all the other sections are on top of this. */
     background-color: #1F2937;
+    text-align: center;
+    padding: 30px;
+    color: #E5E7EB;
 }
