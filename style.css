@@ -46,7 +46,7 @@ a {
     align-items: flex-end;
     background-color: #1F2937;
     column-gap: 30px;
-    padding: 70px;
+    padding: 0px 70px 100px 70px; /* before this was 70 all around. the current measurement is closer to the sample */
 }
 
 .left-side {   /* instead of having the items as a column as i initially tried, i limited the width and used flex wrap
@@ -76,7 +76,8 @@ a {
 .left-side .secondary {
     font-size: 18px;
     color: #E5E7EB; 
-    justify-content: flex-start;
+    justify-content: flex-start; /* since the left side is wrap, the subtext p is like a new row. this will push it 
+    to the edge */
 }
 
 button {
